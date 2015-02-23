@@ -1,0 +1,17 @@
+<template name="EventsCreate">
+	<form name="createEvent" id="create_event">
+		<label for="title">Event Title</label>
+		<input type="text" name="title">
+	
+		<ul>
+			{{#each tags}}
+				<li>
+					<input type="checkbox" name="tags" value="{{ _id }}">
+					<label for="tag">{{ title }}</label>
+				</li>
+			{{/each}}
+		</ul>
+
+		<input type="submit" class="button">
+	</form>
+</template>

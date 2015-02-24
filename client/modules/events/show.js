@@ -1,4 +1,4 @@
-Template.EventsCreate.events({
+Template.EventsShow.events({
 	'submit #create_event': function (e, tpl) {
 		e.preventDefault();
 		var $form = $(this),
@@ -19,7 +19,7 @@ Template.EventsCreate.events({
 			tags: tags
 		};
 
-		Meteor.call('eventCreate', data, function (err, response) {
+		Meteor.call('eventShow', data, function (err, response) {
 			if (!err) {
 				Router.go('/events');
 			}
@@ -27,8 +27,16 @@ Template.EventsCreate.events({
 	}
 });
 
-Template.EventsCreate.helpers({
-	'tags': function () {
-		return Tags.find();
+Template.EventsShow.helpers({
+	'event': function () {
+		var id = Session.get('eventCurrent');
+
+		if (!id) {
+			return Router.go('events');
+		}
+		
+		var event = Events.findOne({_id: id});
+		Session.set('pageTitle', event.title);
+		return event;
 	}
 });

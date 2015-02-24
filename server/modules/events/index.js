@@ -5,10 +5,21 @@ Meteor.publish('events', function () {
 	return events;
 });
 
+Meteor.publish('eventById', function (id) {
+	var events = Events.findOne({_id: id}),
+		tags = Tags.find({_id: {$in: events.tags}});
+	return [events, tags];
+});
+
 Meteor.methods({
-	'createEvent': function (event) {
+	'eventCreate': function (event) {
 		//return console.log(event);
 		Events.insert(event);
+		return true;	
+	},
+	'eventRemove': function (event) {
+		//return console.log(event);
+		Events.remove(event);
 		return true;	
 	}
 });

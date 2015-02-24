@@ -1,9 +1,30 @@
 <template name="Events">
-	<ul>
-		{{#each events}}
-			<li>{{ title }}</li>
-		{{/each}}
-	</ul>
-
-	<a href="/events/create">Create</a>
+	<div class="medium-6 medium-offset-3 columns">
+		<ul class="list">
+			{{#each events}}
+				<li class="list-item clearfix">
+					<div class="left title">
+						{{ title }}
+					</div>
+					<div class="right">
+						<a href="/events/show/{{_id}}" class="button round">
+							<i class="fa fa-view"></i>
+						</a>
+						<a href="/events/edit/{{_id}}" class="button round">
+							<i class="fa fa-pencil"></i>
+						</a>
+						<a href="#" class="button alert round remove">
+							<i class="fa fa-times"></i>
+						</a>
+					</div>
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+	
+	<div class="page-actions">
+		<a class="button round" href="/events/create">
+			<i class="fa fa-plus"></i>
+		</a>
+	</div>
 </template>

@@ -1,0 +1,29 @@
+<template name="MainNavigation">
+	<nav class="tab-bar"> 
+		<section class="left-small"> 
+			<a class="left-off-canvas-toggle menu-icon" href="#">
+				<span></span>
+			</a> 
+			</section> 
+
+		<section class="middle tab-bar-section"> 
+			<h1 class="title">{{ pageTitle }}</h1> 
+		</section> 
+	</nav> 
+
+    <aside class="left-off-canvas-menu">
+        <!-- whatever you want goes here -->
+        <ul class="off-canvas-list">
+			<li><label>Menu</label></li> 
+			{{#each items}}
+	            <li>
+	            	<a href="{{ url }}">{{ title }}</a>
+	            </li>
+	        {{/each}}
+            <!--<li>
+            	<a href="/tags">Tags</a>
+            </li>
+            -->
+        </ul>
+    </aside>
+</template>

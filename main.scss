@@ -1,0 +1,52 @@
+@import ".meteor/local/build/programs/server/assets/packages/matthew_foundation5-sass/foundation";
+@import "client/scss/variables";
+@import "client/scss/elements";
+@import url("http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700");
+
+body, h1, h2, h3, h4 {
+	font-family: $fontRoboto;
+}
+
+.off-canvas-wrap {
+	.inner-wrap{
+		min-height: 100vh;
+	}
+}
+
+.row.full-width {
+	width: 100%;
+	max-width: 100%; 
+}
+
+.page-actions {
+	position: fixed;
+	bottom: 15px;
+	width: 20%;
+	right: 0;
+
+	.button {
+		padding: 15px;
+		font-size: 25px;
+		min-width: 3.75rem;
+	}
+}
+
+.list {
+	padding: 0;
+	margin: 15px 0;
+}
+
+.list-item {
+	display: block;
+	list-style-type: none;
+	padding: 15px 10px;
+	margin: 10px 0;
+	background-color: #ffffff;
+	box-shadow: 0 0px 6px -2px $listShadow;
+	border-radius: 4px;
+
+	.title {
+		margin: 3px 0;
+		font-size: 20px;
+	}
+}

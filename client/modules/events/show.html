@@ -1,0 +1,19 @@
+<template name="EventsShow">
+	<div class="medium-6 medium-offset-3 columns">
+		<div class="list-item">
+			{{ event.title }}
+
+			<div class="tags">
+				{{#each event.tags}}
+					<span class="label">{{ this }}</span>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	
+	<div class="page-actions">
+		<a class="button round" href="/events/edit/{{ event._id }}">
+			<i class="fa fa-pencil"></i>
+		</a>
+	</div>
+</template>

@@ -1,8 +1,42 @@
 <template name="EventsCreate">
 	<div class="medium-6 medium-offset-3 columns">
 		<form name="createEvent" id="create_event">
-			<label for="title">Event Title</label>
-			<input type="text" name="title">
+			<div class="row">
+				<div class="large-12 columns">
+					<label for="title">Event Title</label>
+					<input type="text" name="title">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="large-6 columns">
+					<div class="row">
+						<div class="large-6 columns">
+							<label for="start_date">Start Date</label>
+							<input type="text" name="start_date" class="datepicker">
+						</div>
+
+						<div class="large-6 columns">
+							<label for="start_time">Start Time</label>
+							<input type="text" name="start_time" class="timepicker">
+						</div>
+					</div>
+				</div>
+
+				<div class="large-6 columns">
+					<div class="row">
+						<div class="large-6 columns">
+							<label for="end_date">End Date</label>
+							<input type="text" name="end_date" class="datepicker">
+						</div>
+
+						<div class="large-6 columns">
+							<label for="end_time">End Time</label>
+							<input type="text" name="end_time" class="timepicker">
+						</div>
+					</div>
+				</div>
+			</div>
 		
 			<div>
 				{{#each tags}}

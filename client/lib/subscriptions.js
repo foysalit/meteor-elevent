@@ -1,5 +1,4 @@
 Meteor.subscribe('events');
-Meteor.subscribe('eventById');
 Meteor.subscribe('tags');
 
 Events = new Meteor.Collection('events');

@@ -5,12 +5,6 @@ Meteor.publish('events', function () {
 	return events;
 });
 
-Meteor.publish('eventById', function (id) {
-	var events = Events.findOne({_id: id}),
-		tags = Tags.find({_id: {$in: events.tags}});
-	return [events, tags];
-});
-
 Meteor.methods({
 	'eventCreate': function (event) {
 		//return console.log(event);

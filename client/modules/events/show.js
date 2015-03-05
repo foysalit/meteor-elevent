@@ -38,5 +38,8 @@ Template.EventsShow.helpers({
 		var event = Events.findOne({_id: id});
 		Session.set('pageTitle', event.title);
 		return event;
+	},
+	'tags': function (ids) {
+		return Tags.find({_id: {$in: ids}});
 	}
 });

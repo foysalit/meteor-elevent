@@ -1,5 +1,3 @@
-var Tags = new Meteor.Collection('tags');
-
 Meteor.publish('tags', function () {
 	var tags = Tags.find({});
 	return tags;

@@ -4,6 +4,10 @@ Template.EventsCreate.events({
 		var $form = $(this),
 			$title = $(tpl.find('input[name="title"]')),
 			$tags = $('input[name="tags"]:checked'),
+			$startDate = $('input[name="start_date"]').pickadate('picker'),
+			$endDate = $('input[name="end_date"]').pickadate('picker'),
+			$startTime = $('input[name="start_time"]').pickadate('picker'),
+			$endTime = $('input[name="end_time"]').pickadate('picker'),
 			tags = [];
 
 		$tags.each(function () {
@@ -19,6 +23,9 @@ Template.EventsCreate.events({
 			tags: tags
 		};
 
+		if ($start)
+
+		return;
 		Meteor.call('eventCreate', data, function (err, response) {
 			if (!err) {
 				Router.go('/events');
@@ -32,3 +39,12 @@ Template.EventsCreate.helpers({
 		return Tags.find();
 	}
 });
+
+Template.EventsCreate.rendered = function () {
+	$('.datepicker').pickadate({
+		onSet: function () {
+			
+		}
+	});
+	$('.timepicker').pickatime();
+};

@@ -1,9 +1,32 @@
 <template name="Tags">
-	<ul>
-		{{#each tags}}
-			<li>{{ title }}</li>
-		{{/each}}
-	</ul>
+	<div class="medium-6 medium-offset-3 columns">
+		<ul class="list">
+			{{#each tags}}
+				<li class="list-item clearfix">
+					<div class="left title">
+						{{ title }}
+					</div>
 
-	<a href="/tags/create">Create</a>
+					<div class="right">
+						<a href="/tags/show/{{_id}}" class="button round">
+							<i class="fa fa-view"></i>
+						</a>
+						<a href="/tags/edit/{{_id}}" class="button round">
+							<i class="fa fa-pencil"></i>
+						</a>
+						<a href="#" class="button alert round remove">
+							<i class="fa fa-times"></i>
+						</a>
+					</div>
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+
+	
+	<div class="page-actions">
+		<a class="button round" href="/tags/create">
+			<i class="fa fa-plus"></i>
+		</a>
+	</div>
 </template>

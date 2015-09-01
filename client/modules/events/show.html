@@ -4,8 +4,8 @@
 			{{ event.title }}
 
 			<div class="tags">
-				{{#each event.tags}}
-					<span class="label">{{ this }}</span>
+				{{#each tags event.tags}}
+					<span class="label">{{ title }}</span>
 				{{/each}}
 			</div>
 		</div>

@@ -1,3 +1,11 @@
+Session.set('leftMenuItems', [{
+	url: '/events',
+	title: 'Events'
+}, {
+	url: '/tags',
+	title: 'Tags'
+}]);
+
 Router.configure({
   layoutTemplate: 'MainLayout',
 });

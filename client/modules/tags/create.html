@@ -1,7 +1,15 @@
 <template name="TagsCreate">
-	<form name="createTag" id="create_tag">
-		<label for="title">Tag Title</label>
-		<input type="text" name="title">
-		<input type="submit" class="button">
-	</form>
+	<div class="medium-6 medium-offset-3 columns">
+		<form name="createTag" id="create_tag">
+			<label for="title">Tag Title</label>
+			<input type="text" name="title">
+			<input type="submit" class="button">
+		</form>
+	</div>
+	
+	<div class="page-actions">
+		<a class="button round alert" href="/tags">
+			<i class="fa fa-times"></i>
+		</a>
+	</div>
 </template>
